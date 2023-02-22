@@ -1,3 +1,6 @@
 packages:
   - "apps/*"
   - "packages/*"
+  - "!**/test/**"
+  - "!apps/web-template/*"
+  - "!packages/package-template/**"

@@ -1,73 +1,31 @@
-# Turborepo starter
+# MONOREPO 템플릿 (with turborepo)
 
-This is an official pnpm starter turborepo.
+> 해당 템플릿은 pnpm 의 사용에 최적화 되어있습니다.
 
-## What's inside?
+## Env
 
-This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages/apps:
+pnpm 7.27.0
+vscode
+node 16.9.0
 
-### Apps and Packages
+## 개별 패키지별 라이브러리 관리
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
-
-### Build
-
-To build all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm run build
+```zsh
+    pnpm add <dependency-name> --filter <workspace>
 ```
 
-### Develop
+## 모든 프로젝트의 해당 라이브러리 한꺼번에 업데이트
 
-To develop all apps and packages, run the following command:
-
-```
-cd my-turborepo
-pnpm run dev
+```zsh
+    pnpm recursive upgrade <dependency-name>
 ```
 
-### Remote Caching
+> 공통 devdependency로 사용되는 라이브러리의 경우 recursive 로 관리하는 것을 강력 추천합니다.
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+## 컨벤션
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+- app 디렉토리 에서는 pages 에 직접적으로 사용되는 것만 사용합니다.
 
-```
-cd my-turborepo
-pnpm dlx turbo login
-```
+- packages 디렉토리 는 src/index.ts 를 통해 모두 export 해서 받아옵니다.
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
-
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
-
-```
-pnpm dlx turbo link
-```
-
-## Useful Links
-
-Learn more about the power of Turborepo:
-
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+- test는 \_\_test\_\_ 폴더를 권장합니다. (빌드시 예외처리 설정되어있습니다.)
