@@ -1,0 +1,162 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  font-family: system-ui, -apple-system, 'Noto Sans KR', 'Open Sans',
+    'Malgun Gothic', 'Segoe UI', Dotum, Helvetica, Arial, sans-serif;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+body {
+  font-size: 1rem;
+  font-family: sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin: 0;
+  font-family: inherit;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+h5 {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+small {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+caption {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+th,
+td {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+/* Mobile design system */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 2.125rem;
+    line-height: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  h5 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  h6 {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  body {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  small {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  caption {
+    font-size: 0.625rem;
+    line-height: 1rem;
+  }
+
+  th,
+  td {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+}
